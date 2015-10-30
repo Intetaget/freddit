@@ -1,0 +1,7 @@
+<h2>Freddits</h2>
+
+<ul class="links">
+  <% @links.each do |link| %>
+    <li><%= link_to link.title, link_path(link) %></li>
+  <% end %>
+</ul>
