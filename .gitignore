@@ -17,4 +17,7 @@
 /tmp
 
 # Ignore RubyMine Files
-/.idea
+.idea
+
+# Ignore Apple Mac file
+.DS_Store

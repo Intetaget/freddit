@@ -15,7 +15,17 @@ Rails.application.routes.draw do
   get "links/:id", to: "links#show", as: "link"
   get "links/:id/edit", to: "links#edit", as: "link_edit"
   put "links/:id", to: "links#update"
-  delete "links/:id", to "links#destroy"
+  delete "links/:id", to: "links#destroy"
+
+  get "signup", to: "registrations#new"
+  post "signup", to: "registrations#create"
+
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "login", to: "sessions#destroy"
+
+  post "links/:id/comments", to: "comments#create", as: "comments"
+  delete "comments/:id", to: "comments#destroy"
 
   post "links/:id/comments", to: "comments#create"
 
