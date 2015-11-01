@@ -1,30 +1,28 @@
-def new
-     render :new
-end
+class CommentsController < ApplicationController
+  def new
+    @comment = Comment.new
+    render :new
+  end
 
-def create
-     comment = Comment.create(content: params[:content], post_id: params[:id], user_id: 1)
-#     redirect_to comment_path?
-end
+  def create
+    comment = Comment.create(body: params[:body], link_id: params[:link_id], user_id: params[:user_id])
+    redirect_to link_path(comment.link_id)
+  end
 
-def edit
+  def edit
     comment = Comment.find(params[:id])
     render :edit
+  end
+
+  def update
+    comment = Comment.find(params[:id])
+    comment.update(body: params[:body])
+    redirect_to link_path(comment.link_id)
+  end
+
+  def destroy
+    coment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to links_path
+  end
 end
-
-def changeling
-     comment = Comment.find(params[:id])
-     comment.update(body: params[:body], 
-     #render :show
-     redirect_to ???
-end
-
-
-
-#   def show
-#     @post = Post.find(params[:id])
-#     render :show
-#   end
-
-
-

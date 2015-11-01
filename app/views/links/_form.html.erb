@@ -1,0 +1,13 @@
+<div class="link-field">
+  <%= label_tag "Link Title: " %>
+  <%= text_field_tag :title, @link.title %>
+</div>
+
+<div class="link-field">
+  <%= label_tag "URL: " %>
+  <%= url_field_tag :url, @link.url %>
+</div>
+
+<%= hidden_field_tag :user_id, 1 %>
+
+<%= submit_tag "Publish!" %>
