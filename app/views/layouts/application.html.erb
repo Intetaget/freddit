@@ -13,7 +13,8 @@
   </h2>
 <% end %>
 
-<%= image_tag "freddit-logo.jpg" %>
+<a href="/"><%= image_tag "freddit-logo.jpg" %></a>
+
 <% if current_user %>
   <h3>Welcome to Freddit, <%= current_user.email %>!</h3>
   <%= link_to "Logout", login_path, method: "delete" %>

@@ -7,7 +7,7 @@
 
 <div class="link-comment-form">
   <h3>Add a comment</h3>
-  <%= form_tag(comments_path(@post)) do %>
+  <%= form_tag(comments_path) do %>
     <%= label_tag "Your Comment: " %>
     <%= text_area_tag :comment, nil, cols: 50, rows: 10 %>
     <%= submit_tag "Add Your Comment" %>

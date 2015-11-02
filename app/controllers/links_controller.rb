@@ -10,11 +10,12 @@ class LinksController < ApplicationController
   end
 
   def create
+    binding.pry
     link = Link.create(
                    title:   params[:title],
                    url:     params[:url],
-                   user_id: params[:user])
-    redirect_to link_path(link)
+                   user_id: params[:user_id])
+    redirect_to link_path(link.id)
   end
 
   def show
