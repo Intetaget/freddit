@@ -5,6 +5,17 @@
   <%= link_to( @link.title, @link.url ) %>
 </div>
 
+<div class="comments">
+  <h3>Link Comments</h3>
+  <% @link.comments.each do |comment| %>
+    <div class="comment" style="border: solid black 1px;">
+      <%= simple_format( comment.body ) %>
+      <em>From: <%= comment.user.name %></em><br />
+      <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em>
+    </div>
+  <% end %>
+</div>
+
 <div class="link-comment-form">
   <h3>Add a comment</h3>
   <%= form_tag(comments_path) do %>

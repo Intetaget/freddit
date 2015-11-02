@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.create(body: params[:body], link_id: params[:link_id], user_id: params[:user_id])
+    Comment.create(body: params[:comment], link_id: params[:id], user_id: current_user.id)
     redirect_to link_path
   end
 
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    coment = Comment.find(params[:id])
+    comment = Comment.find(params[:id])
     comment.destroy
     redirect_to links_path
   end
