@@ -10,7 +10,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    binding.pry
+    #binding.pry
     link = Link.create(
                    title:   params[:title],
                    url:     params[:url],
