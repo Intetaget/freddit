@@ -6,7 +6,7 @@ class CommentTest < ActiveSupport::TestCase
   # end
 
     test "Cannot save without needed parameter" do
-  	user = User.new
-  	assert_not user.save
+  	comment = Comment.create
+  	refute comment.save
   	end
 end
