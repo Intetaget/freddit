@@ -6,6 +6,7 @@ class LinkTest < ActiveSupport::TestCase
     assert true
   end
 
+
   test "links must belong to a user" do
   	## test code
   end
