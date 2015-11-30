@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 ruby "2.2.2"
-
+# #CanCan is an authorization library for Ruby on Rails which 
+# restricts what resources a given user is allowed to access. 
+# All permissions are defined in a single location (the Ability class) 
+# and not duplicated across controllers, views, and database queries.
+gem "cancan"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

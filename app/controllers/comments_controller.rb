@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  #before action
   def new
     @comment = Comment.new
     render :new
@@ -16,6 +17,7 @@ class CommentsController < ApplicationController
 
   def update
     comment = Comment.find(params[:id])
+
     comment.update(body: params[:body])
     redirect_to link_path(comment.link_id)
   end
